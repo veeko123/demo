@@ -1,0 +1,34 @@
+trading system : 
+#provide web service interface
+support functions:
+-create trading account
+-user athentication
+-support streaming quote(web socket,event source)
+prevent abuse of quoting 
+-> only valid user session can create a quote request
+-> max request number is limited per session
+- Data collector to save quote data
+
+support basic trading function
+place/amend order
+user profolio
+user watchlist
+
+#back end
+support order matching
+notification for price/order update
+
+
+
+#web service interface
+command pattern
+sync
+trade28.hk/ws/portfolio
+trade28.hk/ws/snapshot?type=stock&code=941
+trade28.hk/ws/amendOrder?orderId=?&price=?&quantity=?
+trade28.hk/ws/placeOrder?type=?&code=?&&price=?&quantity=?
+trade28.hk/ws/balance
+trade28.hk/ws/orderStatus
+
+async
+trade28.hk/ws/streaming?type=stock&code=941
