@@ -2,7 +2,7 @@
 TradingGateWay
 -long placeOrder((OptionContract,price,quantity,Enum TradeType(buy/sell)) =>return orderId
 -long placeOrder(FutureContract,price,quantity,Enum TradeType(buy/sell))
--long placeOrder(stkCode,price,quantity)
+-long placeOrder(stkCode,price,quantity,Enum TradeType(buy/sell))
 
 DataFeedGateWay
 ->OptionQuote getOptionQuote(OptionContract)
@@ -16,7 +16,7 @@ OptionContract
 ->String stkCode
 ->double strikePrice
 ->Date dueDate(only year and month are effective)
-
+->Enum call/put
 
 FutureContract
 ->String stkCode
