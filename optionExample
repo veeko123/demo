@@ -1,0 +1,8 @@
+option logic:
+how to count margin to balance
+- sell call
+- sell call + put
+- sell call + put(diff product)
+- sell call + call
+- sell call + put | buy call
+- sell call + put | buy put
