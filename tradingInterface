@@ -35,6 +35,7 @@ FutureQuote
 Option:
 stkCode
 strikePrice
+type(call/put)
 name
 nominal
 bid[]
