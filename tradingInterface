@@ -53,7 +53,7 @@ due date
 
 Stock/Warrant/CBBC:
 stkCode
-stkType(stock/warrant/cbbc)
+type(stock/warrant/cbbc)
 name
 nominal
 bid[]
