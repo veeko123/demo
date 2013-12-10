@@ -1,8 +1,38 @@
 option logic:
 how to count margin to balance
+#assume client account balance is $20000
+
 - sell call
+e.g client sell 941 call with sp 85 and margin $1000
+client account become $20000-$1000 = $19000 + price difference
+
 - sell call + put
+e.g 
+client sell 941 call with sp 85 and margin $1000
+client sell 941 put with sp 85 and margin $800
+#only max margin is count when both call/put is sold
+client account become $20000-$1000 = $19000 + price difference
+
 - sell call + put(diff product)
+client sell 941 call with sp 85 and margin $1000
+client sell 5(hsbc) put with sp 85 and margin $800
+client account become $20000-$1000-$800 = $18200 + price difference
+
 - sell call + call
+client sell 941 call with sp 85 and margin $1000
+client sell 941 call with sp 85 and margin $1100
+client account become $20000-$1000-$1100 = $17900 + price difference
+
 - sell call + put | buy call
+client sell 941 call with sp 85 and margin $1000
+client sell 941 put with sp 85 and margin $800
+client account become $20000-$1000 = $19000 + price difference
+client buy 941 call with sp 85 
+client account become $19000+$1000(refund)-$800(outstanding margin on 941 put) = $19200 + price difference
+
 - sell call + put | buy put
+client sell 941 call with sp 85 and margin $1000
+client sell 941 put with sp 82.5 and margin $1200
+client account become $20000-$1200 = $18800 + price difference
+client buy 941 put with sp 82.5 
+client account become $18800+$1200(refund)-$1000(outstanding margin on 941 call) = $19000 + price difference
