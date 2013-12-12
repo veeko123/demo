@@ -74,3 +74,13 @@ due date
 gearing
 conversion ration
 
+
+======
+Design Flow
+======
+-streaming data source
+poll the datagway regularly       
+
+-on-demand data source(for watchlist,portfolio,account balance)
+poll datagateway on request
+data update time within predefine interval(e.g 1 min) will not poll the gateway, just return the stored value
