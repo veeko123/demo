@@ -1,14 +1,14 @@
 ====================================================
 TradingGateWay
--long placeOrder((OptionContract,price,quantity,Enum TradeType(buy/sell)) =>return orderId
--long placeOrder(FutureContract,price,quantity,Enum TradeType(buy/sell))
--long placeOrder(stkCode,price,quantity,Enum TradeType(buy/sell))
+-long placeOrder((OptionContract crt,double price,int quantity,Enum TradeType(buy/sell)) =>return orderId
+-long placeOrder(FutureContract crt ,double price,int quantity,Enum TradeType(buy/sell))
+-long placeOrder(String stkCode,double price,int quantity,Enum TradeType(buy/sell))
 #for cbbc and warrant, same method call to stock
 
 DataFeedGateWay
-->OptionQuote getOptionQuote(OptionContract)
+->OptionQuote getOptionQuote(OptionContract ctr)
 ->StockQuote getStockQuote(String code)
-->FutureQuote getFutureQuote(FutureContract)
+->FutureQuote getFutureQuote(FutureContract ctr)
 #for cbbc and warrant, same method call to stock
 
 ====================================================
@@ -32,47 +32,47 @@ StockQuote
 FutureQuote
 --> deduce from screen <---
 
-Option:
-stkCode
-strikePrice
-type(call/put)
-name
-nominal
-bid[]
-ask[]
-bidVol[]
-askVol[]
-previous close
-fairPrice
-open
-high
-low
-volume
-margin
-due date
+OptionQuote:
+String stkCode
+double strikePrice
+String type(call/put)
+String name
+double nominal
+double bid[]
+double ask[]
+long bidVol[]
+long askVol[]
+double previous close
+double fairPrice
+double open
+double high
+double low
+long volume
+double margin
+Date due date
 
 Stock/Warrant/CBBC:
-stkCode
-type(stock/warrant/cbbc)
-name
-nominal
-bid[]
-ask[]
-bidVol[]
-askVol[]
-previous close
-open
-high
-low
-turnover
-volume
-lotSize
-margin
+String stkCode
+String type(stock/warrant/cbbc)
+String name
+String nominal
+double bid[]
+double ask[]
+long bidVol[]
+long askVol[]
+double previous close
+double open
+double high
+double low
+long turnover
+long volume
+int lotSize
+double margin
 ---cbbc/warrant only---
-strike price
-due date
-gearing
-conversion ration
+double strike price
+Date due date
+double gearing
+double conversion ration
 
 
 ======
