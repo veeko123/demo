@@ -18,7 +18,7 @@ OptionContract
 ->String stkCode
 ->double strikePrice
 ->Date dueDate(only year and month are effective)
-->Enum call/put
+->Enum OptionType call/put
 
 FutureContract
 ->String stkCode
@@ -35,7 +35,7 @@ FutureQuote
 OptionQuote:
 String stkCode
 double strikePrice
-String type(call/put)
+Enum OptionType type(call/put)
 String name
 double nominal
 double bid[]
@@ -53,7 +53,7 @@ Date due date
 
 Stock/Warrant/CBBC:
 String stkCode
-String type(stock/warrant/cbbc)
+Enum StockType type(stock/warrant/cbbc)
 String name
 String nominal
 double bid[]
