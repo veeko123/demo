@@ -1,0 +1,33 @@
+public void testDataSimulation() {
+		double[][] data = { { 20, 4, 5, 6 }, { 20, 4, 9, 16 } };
+		for (double[] d : data) {
+			System.out.println("start");
+			double high = d[0], low = d[1], open = d[2], close = d[3];
+			double nominal = open;
+			double highGap = Math.abs(high - close);
+			double lowGap = Math.abs(low - close);
+			if (highGap > lowGap) {
+				// first high then low
+				do {
+					System.out.println(nominal);
+				} while (++nominal < high);
+				do {
+					System.out.println(nominal);
+				} while (--nominal > low);
+				do {
+					System.out.println(nominal);
+				} while (nominal++ < close);
+			} else {
+				// first low then high
+				do {
+					System.out.println(nominal);
+				} while (--nominal > low);
+				do {
+					System.out.println(nominal);
+				} while (++nominal < high);
+				do {
+					System.out.println(nominal);
+				} while (nominal-- > close);
+			}
+		}
+	}
