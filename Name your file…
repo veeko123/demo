@@ -1,0 +1,14 @@
+Enter file contents here
+Long
+=IF(H2>$R$1,J2,"")
+Short
+=IF(I2>$R$1,K2,"")
+Max
+=MAX($C$19:C$40)
+Min
+=MIN($C$19:D$40)
+
+=IF(ISNUMBER(L40-E40),L40-E40,"")
+=IF(ISNUMBER(E40-M40),E40-M40,"")
+=IF(N40-L40>0,IF($T$1>N40-L40,N40-L40,$T$1),L40-$E$19)
+=IF(M40-O40>0,IF($T$1>M40-O40,M40-O40,$T$1),M40-$E$19)
